@@ -1,47 +1,72 @@
-<!doctype html>
-<html lang="en" xmnls:th="http://www.thymeleaf.org">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="UTF-8" />
-	<title>Document</title>
+  <meta charset="UTF-8" />
+  <title>Order Confirmation</title>
+  <style>
+    body {
+      background-color: #ffdead; /* lighter navajowhite */
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-size: 18px;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #2f4f2f; /* dark green */
+    }
+
+    .container {
+      text-align: center;
+      background-color: #ffffffdd;
+      padding: 40px 60px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+    }
+
+    h4 {
+      color: #2e8b57;
+      margin-bottom: 15px;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    h3 {
+      font-weight: 500;
+      color: #3a6f3a;
+    }
+
+    span {
+      color: #1b4d1b;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+
+    a {
+      display: inline-block;
+      margin-bottom: 30px;
+      padding: 10px 20px;
+      background-color: #2e8b57;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    a:hover {
+      background-color: #276b47;
+    }
+  </style>
 </head>
-<style>
-	body{
-		background-color:navajowhite;
-		font-family: cursive;
-		font-size: 30px;
-		
-	}
-	.text{
-		position: relative;
-		left: 250px;
-		top: 200px;
-		text-align: center;
-		height: max-content;
-		width: max-content;
-	}
-	span,h4
-	{
-		color: green;
-	}
-	a{
-		border: 1px solid black;
-		text-decoration: none;
-		background-color: darkgreen;
-		color: aliceblue;
-		font-family: sans-serif;
-		padding: 5px;
-	}
-	
-</style>
 
 <body>
-		<a href="/product/back" >Back</a>
-	<div class="text">
-		<h4>Ordered SuccessFully... !!!</h4>
-		<h3 style="font-family: sans-serif;">Your purchased amount is : <span th:text="'₹ '+${amount}+'/-'"></span></h3>
-	</div>
-
+  <div class="container">
+    <a href="/product/back">← Back to Products</a>
+    <h4>Order Successful! 🎉</h4>
+    <h3>Your purchased amount is: <span th:text="'₹ ' + ${amount} + ' /- '"></span></h3>
+  </div>
 </body>
 
 </html>

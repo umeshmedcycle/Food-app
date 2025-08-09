@@ -2,29 +2,92 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.com">
 
 <head>
-	<meta charset="UTF-8" />
-	<title>FoodFrenzy</title>
-	<link rel="icon" type="image/x-icon" href="./Images/logo.png">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-	<link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
-	<link rel="stylesheet" href="" th:href="@{css/Home.css}" />
-	<style>
-		body{
-			background-image: url('./Images/istockphoto-1006271368-612x612.jpg'); 
-			 background-size: cover; 
-        
-    
-		}
-	</style>
+  <meta charset="UTF-8" />
+  <title>FoodFrenzy</title>
+  <link rel="icon" type="image/x-icon" href="./Images/logo.png" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
+  <link rel="stylesheet" href="" th:href="@{/css/Home.css}" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url('./Images/istockphoto-1006271368-612x612.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Overlay to improve text readability */
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 0;
+    }
+
+    nav {
+      position: relative;
+      z-index: 10;
+    }
+
+    .text {
+      position: relative;
+      z-index: 10;
+      max-width: 900px;
+      margin: 150px auto 0 auto;
+      text-align: center;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      line-height: 1.4;
+      font-weight: 400;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Responsive typography */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      h3 {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-	<nav th:replace="~{Navigation::navbar()}"></nav>
-	<div class="text">
-	<h1 >WELCOME TO OUR WEBSITE </h1>
-	<h3 >Where Quality Meets Innovation! <br /> Explore our wide range of products designed to enhance your life.</h3>
-	</div>
-	
+  <nav th:replace="~{Navigation::navbar()}"></nav>
+
+  <div class="text" role="main">
+    <h1>WELCOME TO OUR WEBSITE</h1>
+    <h3>
+      Where Quality Meets Innovation!<br />
+      Explore our wide range of products designed to enhance your life.
+    </h3>
+  </div>
 </body>
 
 </html>

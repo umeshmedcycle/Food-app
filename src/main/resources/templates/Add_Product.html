@@ -2,28 +2,85 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.com">
 
 <head>
-	<meta charset="UTF-8" />
-	<title>Document</title>
-	<link rel="stylesheet" href="" th:href="@{/css/Add_Product.css}" />
+  <meta charset="UTF-8" />
+  <title>Add New Product</title>
+  <link rel="stylesheet" href="" th:href="@{/css/Add_Product.css}" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      padding: 20px;
+    }
+    a {
+      text-decoration: none;
+      color: #2a7a2a;
+      font-weight: bold;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .addProducts {
+      background: white;
+      padding: 25px;
+      max-width: 400px;
+      margin: auto;
+      border-radius: 8px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    }
+    h3 {
+      color: seagreen;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      margin: 15px 0 5px;
+    }
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 1rem;
+      resize: vertical;
+    }
+    button {
+      margin-top: 20px;
+      background-color: seagreen;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #246b24;
+    }
+  </style>
 </head>
 
 <body>
-<a href="/admin/services">Back to Services</a>
-	<div class="addProducts">
-		<h3 style="font-weight: bolder;color: seagreen;">ADD NEW PRODUCT :</h3>
-		<form action="" th:action="@{/addingProduct}" method="post">
-			Product_Name :
-			<input type="text" name="pname" value="" placeholder="Enter Product Name....." /> <br />
-			Product_Price :
-			<input type="text" name="pprice" placeholder="Enter Product Price...." /><br />
-			Product_Desc : <br />
-			<textarea name="pdescription" id="" cols="15" rows="1"
-				placeholder="Enter Product Description.."></textarea><br />
+  <a href="/admin/services">← Back to Services</a>
 
-			<button type="submit">Add_Product</button>
+  <div class="addProducts">
+    <h3>ADD NEW PRODUCT</h3>
+    <form action="" th:action="@{/addingProduct}" method="post" autocomplete="off">
+      <label for="pname">Product Name:</label>
+      <input type="text" id="pname" name="pname" placeholder="Enter product name..." required />
 
-		</form>
-	</div>
+      <label for="pprice">Product Price:</label>
+      <input type="text" id="pprice" name="pprice" placeholder="Enter product price..." required pattern="^\d+(\.\d{1,2})?$" title="Please enter a valid price" />
+
+      <label for="pdescription">Product Description:</label>
+      <textarea id="pdescription" name="pdescription" rows="3" placeholder="Enter product description..." required></textarea>
+
+      <button type="submit">Add Product</button>
+    </form>
+  </div>
 </body>
 
 </html>

@@ -2,30 +2,123 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-	<meta charset="UTF-8" />
-	<title>Document</title>
-	<link rel="stylesheet" href="" th:href="@{/css/Update_Product.css}" />
+  <meta charset="UTF-8" />
+  <title>Update Product</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f5f4;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    a.back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #2e7d32;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #2e7d32;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a.back-link:hover {
+      background-color: #2e7d32;
+      color: white;
+    }
+
+    .updateProduct {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgb(0 0 0 / 0.1);
+      width: 450px;
+      max-width: 95vw;
+    }
+
+    .updateProduct h3 {
+      color: seagreen;
+      font-weight: 800;
+      margin-bottom: 30px;
+      font-size: 1.8rem;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #2e7d32;
+      font-size: 1rem;
+    }
+
+    input[type="text"],
+    textarea {
+      width: 100%;
+      padding: 10px 14px;
+      margin-bottom: 20px;
+      border: 1.5px solid #a5d6a7;
+      border-radius: 6px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      resize: vertical;
+      transition: border-color 0.3s ease;
+      font-family: inherit;
+    }
+
+    input[type="text"]:focus,
+    textarea:focus {
+      border-color: #388e3c;
+      outline: none;
+      box-shadow: 0 0 8px #388e3c88;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 14px 0;
+      background-color: #388e3c;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #2e7d32;
+    }
+  </style>
 </head>
 
 <body>
-		<a href="/services">Back_To_Services</a>
-	<div class="updateProduct">
-		<h3 style="font-weight: bolder;color: seagreen;">UPDATE EXISTING PRODUCT :</h3>
-		<form action="" th:action="@{'/updatingProduct/'+${product.pid}}" th:object="${product}">
-			Product_Id:
-			<input type="hidden" th:text="${product.pid}" th:value="${product.pid}" /><br />
-			Product_Name :
-			<input type="text" name="pname" th:value="${product.pname}" /> <br />
-			Product_Price :
-			<input type="text" name="pprice" th:value="${product.pprice}" /><br />
-			Product_Desc : <br />
-			<textarea name="pdescription" th:value="${product.pdescription}" id="" cols="10" rows="1">
+  <div>
+    <a href="/services" class="back-link">← Back to Services</a>
+    <div class="updateProduct">
+      <h3>Update Existing Product</h3>
+      <form action="" th:action="@{'/updatingProduct/'+${product.pid}}" th:object="${product}">
+        <input type="hidden" name="pid" th:value="${product.pid}" />
 
-	</textarea><br />
-			<button type="submit">Update_Product</button>
+        <label for="pname">Product Name:</label>
+        <input type="text" id="pname" name="pname" th:value="${product.pname}" required />
 
-		</form>
-	</div>
+        <label for="pprice">Product Price:</label>
+        <input type="text" id="pprice" name="pprice" th:value="${product.pprice}" required />
+
+        <label for="pdescription">Product Description:</label>
+        <textarea id="pdescription" name="pdescription" rows="4" th:text="${product.pdescription}" required></textarea>
+
+        <button type="submit">Update Product</button>
+      </form>
+    </div>
+  </div>
 </body>
 
 </html>

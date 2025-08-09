@@ -7,65 +7,81 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f2f2f2;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #74ABE2, #5563DE);
             margin: 0;
-        }
-
-        .RegistrationContainer {
+            height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            color: #444;
         }
 
-        .registration {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 400px;
-            padding: 20px;
+        .RegistrationContainer {
+            background-color: #f5f7fa;
+            padding: 50px 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            width: 480px;
+            max-width: 95vw;
         }
 
         .registration h2 {
             text-align: center;
-            color: #333;
+            color: #2c3e50;
+            margin-bottom: 36px;
+            font-weight: 700;
+            font-size: 2.4rem;
         }
 
-        .registration label {
+        label {
             display: block;
             margin-bottom: 8px;
-            color: #555;
+            font-weight: 600;
+            color: #34495e;
+            font-size: 1.1rem;
         }
 
-        .registration input {
+        input {
             width: 100%;
-            padding: 10px;
-            margin-bottom: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
+            padding: 14px 16px;
+            margin-bottom: 22px;
+            border: 1.8px solid #aec6cf;
+            border-radius: 6px;
+            font-size: 18px;
+            transition: border-color 0.3s ease;
             box-sizing: border-box;
         }
 
-        .registration button {
-            background-color: #4caf50;
-            color: #fff;
-            padding: 10px 15px;
+        input:focus {
+            border-color: #5563DE;
+            outline: none;
+            box-shadow: 0 0 8px #5563DEaa;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px 0;
+            background-color: #5563DE;
             border: none;
-            border-radius: 4px;
+            border-radius: 6px;
+            color: white;
+            font-size: 20px;
+            font-weight: 700;
             cursor: pointer;
-            font-size: 16px;
+            transition: background-color 0.3s ease;
         }
 
-        .registration button:hover {
-            background-color: #45a049;
+        button:hover {
+            background-color: #3b4bb3;
         }
 
-        .registration p {
-            margin-top: 10px;
+        p {
+            margin-top: 16px;
             text-align: center;
-            font-size: 14px;
-            color: #ff0000;
+            font-size: 15px;
+            color: #e74c3c;
+            font-weight: 600;
         }
     </style>
 </head>
@@ -73,31 +89,26 @@
 <body>
     <div class="RegistrationContainer">
         <div class="registration">
-            <div class="content">
-                <h2>Register</h2>
-
+            <h2>Register</h2>
             <form th:action="@{/register}" method="get" th:object="${userRegistration}">
-				    <label for="u_id">UserID:</label>
-                    <input type="text" id="u_id" name="u_id" th:field="*{u_id}" required><br>
-                    
-                    <label for="uemail">Email:</label>
-                    <input type="email" id="uemail" name="uemail" th:field="*{uemail}" required><br>
+                <label for="u_id">UserID:</label>
+                <input type="text" id="u_id" name="u_id" th:field="*{u_id}" required>
 
-                    <label for="uname">Username:</label>
-                    <input type="text" id="uname" name="uname" th:field="*{uname}" required><br>
+                <label for="uemail">Email:</label>
+                <input type="email" id="uemail" name="uemail" th:field="*{uemail}" required>
 
-                    <label for="unumber">Phone Number:</label>
-                    <input type="text" id="unumber" name="unumber" th:field="*{unumber}" required><br>
+                <label for="uname">Username:</label>
+                <input type="text" id="uname" name="uname" th:field="*{uname}" required>
 
-                    <label for="upassword">Password:</label>
-                    <input type="password" id="upassword" name="upassword" th:field="*{upassword}" required><br>
+                <label for="unumber">Phone Number:</label>
+                <input type="text" id="unumber" name="unumber" th:field="*{unumber}" required>
 
-                    <button type="submit">Register</button>
-                </form>
+                <label for="upassword">Password:</label>
+                <input type="password" id="upassword" name="upassword" th:field="*{upassword}" required>
 
-
-                <p th:text="${error}" style="color: red;"></p>
-            </div>
+                <button type="submit">Register</button>
+            </form>
+            <p th:text="${error}"></p>
         </div>
     </div>
 </body>

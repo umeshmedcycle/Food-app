@@ -1,355 +1,319 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8" />
-    <title>FoodFrenzy</title>
-    <link rel="icon" type="image/x-icon" href="./Images/logo.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
-    <link rel="stylesheet" href="" th:href="@{/css/About.css}" /> 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<!--<link rel="stylesheet" type="text/css" href="abc.css"> -->
-    <style type="text/css"> 
- @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap'); 
-* 
-{
-	margin: 0; 
-	padding: 0; 
-	box-sizing: border-box; 
-	font-family: 'Poppins',sans-serif;
-} 
-  
-.contact 
-{
-	position: relative; 
-	min-height: 100vh; 
-	padding: 50px 100px; 
-	display: flex; 
-	justify-content: center; 
-	align-items: center; 
-	flex-direction: column; 
-	background:#222 ;
-} 
-.contact .content h2{
-	 
-	 font-size:3em; 
-	 color: #FFFFFF; 
-	 font-weight: 500; 
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FoodFrenzy - Contact Us</title>
+  <link rel="icon" type="image/x-icon" href="./Images/logo.png" />
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+  <link rel="stylesheet" href="" th:href="@{/css/Navigation.css}" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap");
 
-} 
-.contact .content p 
-{
-	color: #FFFFFF; 
-	font-size: 1.1em; 
-	font-weight: 300;
-} 
-.container  
-{
-	width:100% ; 
-	display: flex; 
-	justify-content: center; 
-	align-items: center; 
-	gap: 50px;    
-	 
-	margin-top: 30px;
-} 
-.container .contactInfo 
-{
-	width: 50%; 
-	display: flex; 
-	flex-direction: column;
-} 
-.container .contactInfo .box 
-{ 
-	position: relative; 
-	padding: 20px 0; 
-	display: flex; 
-	cursor: pointer;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+    }
 
-} 
-.container .contactInfo .box .icon 
-{
-position: relative; 
-min-width: 60px; 
-height: 60px; 
-background: repeating-conic-gradient(from 27.5deg,crimson 0%,crimson 10%, transparent 10%,transparent 50%); 
-display: flex; 
-justify-content: center; 
-align-items: center;
-} 
-.container .contactInfo .box .icon::before 
-{
-	content: '';  
-	position: absolute; 
-	inset: 0;  
-	background: repeating-conic-gradient(from 117.5deg,crimson 0%,crimson 10%, transparent 10%,transparent 50%); 
+    body {
+      background-color: #121212;
+      color: #eee;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 40px 20px;
+    }
 
-} 
-.container .contactInfo .box .icon::after 
-{
-	content: ''; 
-	position: absolute;  
-	inset: 2px; 
-	background: #222;
+    nav {
+      width: 100%;
+      max-width: 1200px;
+      margin-bottom: 40px;
+    }
 
-} 
-.container .contactInfo .box .icon b 
-{
-	position: absolute; 
-	inset: 8px; 
-	background: crimson; 
-	z-index: 2;
-} 
-.container .contactInfo .box .icon i 
-{
-	position: relative; 
-	z-index: 1000; 
-	color: #333; 
-	font-size: 1.25em;
-} 
-.container .contactInfo .box .text 
-{
-	position: relative;  
-	display: flex; 
-	flex-direction: column; 
-	margin-left: 20px; 
-	font-size: 1.1em; 
-	color: #fff; 
-	font-family: 300;
+    section.contact-section {
+      background: #1e1e1e;
+      max-width: 1200px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.3);
+      padding: 40px 30px;
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
 
-} 
-.container .contactInfo .box .text h3 
-{
-	font-weight: 500; 
-	color: crimson;
-} 
-.container .contactInfo .txt 
-{
-	color: #fff; 
-	margin-top: 50px; 
-	font-weight: 500; 
-	border-left: 50px solid crimson; 
-	padding-left: 10px; 
-	line-height: 1em;
-} 
-.container .contactInfo .sci 
-{
-	position: relative; 
-	display: flex; 
-	gap: 30px; 
-	margin: 20px 0;
-} 
-.container .contactInfo .sci li 
-{
-	list-style: none;
-} 
-.container .contactInfo .sci li a 
-{
-	color: #fff; 
-	font-size: 1.5em; 
-	transition: 0.25s;
-} 
-.container .contactInfo .sci li a:hover 
-{
-	color: crimson; 
-	filter: drop-shadow(0 0 5px crimson);
-} 
-.container .contactForm 
-{
-	position: relative; 
-	width: 40%; 
-	background: repeating-conic-gradient(from var(--a),crimson 0%,crimson 10%, transparent 10%,transparent 50%);  
-	animation: animate 6s linear infinite; 
-	padding: 60px;
-}  
-.container .contactForm::before 
-{
-	content: ''; 
-	position: absolute; 
-	inset: 0; 
-	background: repeating-conic-gradient(from var(--a),crimson 0%,crimson 10%, transparent 10%,transparent 50%);  
-	animation: animate 20s linear infinite;  
-	animation-delay: -1.5s;
-} 
-.container .contactForm::after 
-{
-	content: '';  
-	position: absolute; 
-	inset: 2px; 
-	border: 20px solid #222; 
-	background: #333;
+    .contact-info,
+    .contact-form {
+      flex: 1 1 400px;
+      min-width: 320px;
+    }
 
-}
-@property --a 
-{
-	syntax: '<angle>'; 
-	inherits: false; 
-	initial-value: 0deg;
-} 
-@keyframes animate 
-{
-	0% 
-	{
-		--a:0deg; 
-	} 
-	100% 
-	{
-		--a:3600deg;
-	}
-} 
-.container .contactForm form 
-{
-	position: relative; 
-	z-index: 10;
-} 
-.container .contactForm form h2 
-{
-	font-size: 2em; 
-	color: #fff; 
-	font-weight: 500s;
-} 
-.container .contactForm form .inputBox 
-{
-	position: relative; 
-	width: 100%; 
-	margin-top: 20px;
-} 
-.container .contactForm form .inputBox input , 
-.container .contactForm form .inputBox textarea
-{
-	width: 100% !important; 
-	padding: 5px 0; 
-	font-size: 1.1em; 
-	margin: 10px 0; 
-	border: none; 
-	background: transparent; 
-	border-bottom: 2px solid crimson; 
-	color: #fff; 
-	outline: none; 
-	resize: none;
-} 
-.container .contactForm form .inputBox span 
-{
-	position: absolute; 
-	left: 0; 
-	pointer-events: none; 
-	padding: 5px 0; 
-	margin: 10px 0; 
-	font-size: 1.1em; 
-	color: #fff; 
-	transition: 0.5s;
-} 
-.container .contactForm form .inputBox input:focus ~ span , 
-.container .contactForm form .inputBox textarea:focus ~span , 
-.container .contactForm form .inputBox input:focus ~ span , 
-.container .contactForm form .inputBox textarea:focus ~span 
-{
-color: crimson; 
-font-size: 0.9em; 
-transform: translateY(-24px);
-} 
-.container .contactForm form .inputBox input[type="submit"] 
-{
-	width: 100%; 
-	background: crimson; 
-	color: #222; 
-	border: none; 
-	cursor: pointer; 
-	padding: 10px; 
-	font-size: 1.1em; 
-	font-weight: 500;
-} 
-/* Responsive Styles */
-@media (max-width: 991px) {
-	.contact {
-		padding: 50px;
-	}
+    .contact-info h2,
+    .contact-form h2 {
+      color: crimson;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-size: 2.4rem;
+      border-left: 6px solid crimson;
+      padding-left: 12px;
+    }
 
-	.container {
-		flex-direction: column;
-	}
+    .contact-info p.description {
+      margin-bottom: 30px;
+      font-weight: 300;
+      line-height: 1.5;
+      color: #ccc;
+    }
 
-	.container .contactInfo,
-	.container .contactForm {
-		width: 100%;
-	}
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+      cursor: default;
+      transition: color 0.3s ease;
+    }
 
-	.container .contactForm {
-		padding: 40px;
-	}
+    .info-item:hover {
+      color: crimson;
+    }
 
-	.container .contactForm form {
-		padding: 30px;
-	}
-}
+    .info-icon {
+      background: crimson;
+      color: #222;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.4rem;
+      flex-shrink: 0;
+      box-shadow: 0 0 10px crimson;
+    }
 
+    .info-text h3 {
+      margin-bottom: 6px;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
 
+    .info-text p {
+      font-weight: 300;
+      color: #bbb;
+      white-space: pre-line;
+    }
 
- </style>
+    /* Form Styles */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background: #222;
+      padding: 30px 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 12px crimson;
+    }
 
+    label {
+      color: #ddd;
+      font-weight: 500;
+      margin-bottom: 6px;
+      font-size: 1rem;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 12px 15px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      background: #333;
+      color: #eee;
+      resize: vertical;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    textarea:focus {
+      outline: 2px solid crimson;
+      background: #2a2a2a;
+    }
+
+    textarea {
+      min-height: 120px;
+    }
+
+    input[type="submit"] {
+      background: crimson;
+      color: #222;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 0 10px crimson;
+    }
+
+    input[type="submit"]:hover {
+      background: #b20000;
+      box-shadow: 0 0 15px #b20000;
+      color: #fff;
+    }
+
+    /* Social Media */
+    .social-connect {
+      margin-top: 40px;
+      text-align: center;
+      width: 100%;
+    }
+
+    .social-connect h3 {
+      color: crimson;
+      font-weight: 700;
+      margin-bottom: 20px;
+      font-size: 1.8rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .social-links a {
+      color: #eee;
+      font-size: 1.6rem;
+      transition: color 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: crimson;
+      text-shadow: 0 0 8px crimson;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      section.contact-section {
+        flex-direction: column;
+        padding: 30px 20px;
+      }
+      .contact-info,
+      .contact-form {
+        flex: 1 1 100%;
+      }
+      .social-connect {
+        margin-top: 30px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav th:replace="~{Navigation::navbar()}"></nav>
-<section class="contact"> 
- <div class="content"> 
- <h2>Contact Us</h2>  
- <p>FoodFrenzy is a web-based application designed to revolutionize food industry management. With its intuitive interface, it streamlines operations by seamlessly managing customer data, inventory, and orders. This comprehensive solution ensures efficient decision-making and provides accessibility from any device, enhancing productivity in the dynamic food business landscape.
-</p>
- </div> 
- <div class="container"> 
-<div class="contactInfo"> 
- <div class="box"> 
-<div class="icon"><b></b><i class="fa-sharp fa-solid fa-location-dot"></i></div> 
-<div class="text"> 
- <h3>Address</h3> 
- <p>A-142,Sector 92,<br>Noida,<br>22545521</p>
- </div>
-  </div> 
-   <div class="box"> 
-<div class="icon"><b></b><i class="fa-solid fa-phone"></i></div> 
-<div class="text"> 
- <h3>Phone</h3> 
- <p>8299173654</p>
- </div>
-  </div> 
-  <div class="box"> 
-<div class="icon"><b></b><i class="fa-solid fa-envelope"></i></div> 
-<div class="text"> 
- <h3>Email</h3> 
- <p>scanurag@gmail.com</p>
- </div>
-  </div> 
-<div class="contactForm"> 
- 
-<form> 
- <h2>Send Message</h2> 
- <div class="inputBox"> 
-<input type="text" name="" required="required"> 
-<span>Full Name</span>
-  </div> 
- <div class="inputBox"> 
-<input type="text" name="" required="required"> 
-<span>Email</span>
-  </div> 
-   <div class="inputBox"> 
-<textarea required="required"></textarea>
-<span>Type your message...</span>
-  </div> 
-   <div class="inputBox"> 
-<input type="submit" value="Send"> 
-  </div>
- </form>
+  <nav th:replace="~{Navigation::navbar()}"></nav>
 
-</div>
-<h2 class="txt">Connect with us</h2>
-<ul class="sci">  
-	<li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li> 
-	<li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li> 
-	<li><a href="#"><i class="fa-brands fa-instagram"></i></a></li> 
-	<li><a href="#"><i class="fa-brands fa-x-twitter"></i></a></li>
-</ul>
- </div>  
- </div>
- </section>
+  <section class="contact-section" aria-label="Contact Us">
+    <div class="contact-info">
+      <h2>Contact Us</h2>
+      <p class="description">
+        FoodFrenzy is a web-based application designed to revolutionize food industry
+        management. With its intuitive interface, it streamlines operations by seamlessly
+        managing customer data, inventory, and orders. This comprehensive solution
+        ensures efficient decision-making and provides accessibility from any device,
+        enhancing productivity in the dynamic food business landscape.
+      </p>
+
+      <div class="info-item" tabindex="0">
+        <div class="info-icon" aria-hidden="true">
+          <i class="fa-solid fa-location-dot"></i>
+        </div>
+        <div class="info-text">
+          <h3>Address</h3>
+          <p>45,4 th street jayaram nagar <br />chennai<br />892562567</p>
+        </div>
+      </div>
+
+      <div class="info-item" tabindex="0">
+        <div class="info-icon" aria-hidden="true">
+          <i class="fa-solid fa-phone"></i>
+        </div>
+        <div class="info-text">
+          <h3>Phone</h3>
+          <p>+91 8299173654</p>
+        </div>
+      </div>
+
+      <div class="info-item" tabindex="0">
+        <div class="info-icon" aria-hidden="true">
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+        <div class="info-text">
+          <h3>Email</h3>
+          <p>umesh0210v@gmail</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <h2>Send Message</h2>
+      <form action="#" method="post" novalidate>
+        <label for="fullName">Full Name</label>
+        <input
+          type="text"
+          id="fullName"
+          name="fullName"
+          placeholder="Enter your full name"
+          required
+          autocomplete="name"
+        />
+
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Enter your email"
+          required
+          autocomplete="email"
+        />
+
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Type your message here..."
+          required
+          rows="5"
+        ></textarea>
+
+        <input type="submit" value="Send" />
+      </form>
+    </div>
+
+    <div class="social-connect" aria-label="Social Media Links">
+      <h3>Connect with us</h3>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="LinkedIn" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="Instagram" title="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" aria-label="X Twitter" title="X Twitter"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </section>
 </body>
 </html>

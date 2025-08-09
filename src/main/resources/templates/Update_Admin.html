@@ -1,27 +1,126 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
-	<meta charset="UTF-8" />
-	<title>Document</title>
-	<link rel="stylesheet" href="" th:href="@{/css/Update_Admin.css}" />
+  <meta charset="UTF-8" />
+  <title>Update Admin Details</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+    }
+
+    a.back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #2c3e50;
+      text-decoration: none;
+      font-weight: 600;
+      border: 1px solid #2c3e50;
+      padding: 6px 14px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    a.back-link:hover {
+      background-color: #2c3e50;
+      color: white;
+    }
+
+    .updateAdmin {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgb(0 0 0 / 0.1);
+      width: 420px;
+      max-width: 95vw;
+    }
+
+    .updateAdmin h3 {
+      color: #c0392b;
+      text-align: center;
+      margin-bottom: 30px;
+      font-weight: 700;
+      font-size: 1.6rem;
+    }
+
+    form label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #34495e;
+    }
+
+    form input[type="text"],
+    form input[type="email"],
+    form input[type="tel"],
+    form input[type="hidden"] {
+      width: 100%;
+      padding: 10px 14px;
+      margin-bottom: 20px;
+      border: 1.5px solid #bdc3c7;
+      border-radius: 6px;
+      font-size: 1rem;
+      box-sizing: border-box;
+      transition: border-color 0.3s ease;
+    }
+
+    form input[type="text"]:focus,
+    form input[type="email"]:focus,
+    form input[type="tel"]:focus {
+      border-color: #2980b9;
+      outline: none;
+      box-shadow: 0 0 6px #2980b9aa;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 14px 0;
+      background-color: #2980b9;
+      border: none;
+      border-radius: 6px;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #1c5980;
+    }
+  </style>
 </head>
+
 <body>
-		<a href="/services">Back to Services</a>
-	<div class="updateAdmin">
-				<h3 style="color: red;">UPDATE EXISTING ADMIN / PARTNER DETAILS</h3>
-		<form action="" th:action="@{'/updatingAdmin/'+${admin.adminId}}" th:object="${admin}">
-			Admin_Id :
-			<input type="hidden" name="adminId" th:value="${admin.adminId}" th:text="${admin.adminId}"/><br />
-			Admin_Name :
-			<input type="text"  name="adminName"    th:value="${admin.adminName}"/><br />
-			Admin_Number :
-			<input type="tel"  name="adminNumber" th:value="${admin.adminNumber}" pattern="[0-9]{10}"/> <br />
-			Admin_Email :
-			<input type="email" name="adminEmail" th:value="${admin.adminEmail}" /> <br />
-			
-			<button type="submit">Update_Admin</button>
-			
-		</form>
-	</div>
+  <div>
+    <a href="/services" class="back-link">← Back to Services</a>
+    <div class="updateAdmin">
+      <h3>Update Existing Admin / Partner Details</h3>
+      <form action="" th:action="@{'/updatingAdmin/'+${admin.adminId}}" th:object="${admin}">
+        <input type="hidden" name="adminId" th:value="${admin.adminId}" />
+
+        <label for="adminName">Admin Name:</label>
+        <input type="text" id="adminName" name="adminName" th:value="${admin.adminName}" required />
+
+        <label for="adminNumber">Admin Number:</label>
+        <input type="tel" id="adminNumber" name="adminNumber" th:value="${admin.adminNumber}" pattern="[0-9]{10}" required
+          placeholder="10-digit phone number" />
+
+        <label for="adminEmail">Admin Email:</label>
+        <input type="email" id="adminEmail" name="adminEmail" th:value="${admin.adminEmail}" required
+          placeholder="example@domain.com" />
+
+        <button type="submit">Update Admin</button>
+      </form>
+    </div>
+  </div>
 </body>
+
 </html>
