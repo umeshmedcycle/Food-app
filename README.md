@@ -1,34 +1,48 @@
-# FoodFrenzy
-FoodFrenzy is a comprehensive system designed for managing customers, inventory, and orders. It offers secure authentication, role-based access control, and database integration using MySQL. Built with Spring Boot and Thymeleaf, the application provides a seamless experience for admin and staff members.
-
-![Screenshot 2024-10-02 123332](https://github.com/user-attachments/assets/1382d32f-3cbb-40c3-b6b5-9fc55cd5176f)
+FoodFrenzy is an all-in-one platform crafted to efficiently handle customer management, inventory tracking, and order processing. Featuring secure user authentication and role-based access control, it ensures that admins and staff members can access the system according to their privileges. Powered by Spring Boot and Thymeleaf, and backed by a robust MySQL database, FoodFrenzy delivers a smooth and reliable experience for restaurant operations.
 
 
-## Features
+![767001_food_app_logo_reveal-nixmotion](https://github.com/user-attachments/assets/6b14de88-1114-40fb-90fd-d2a85c8559a3)
 
-- **Customer Management**: Easily add, update, and delete customer information.
-- **Inventory Management**: Keep track of your inventory items, including stock levels and pricing.
-- **Order Management**: Manage customer orders, including order creation, updates, and status tracking.
-- **User Authentication**: Secure login and authentication for admin and staff members.
-- **Role-Based Access Control**: Define roles and permissions for different user types.
-- **Thymeleaf Templates**: Utilizes Thymeleaf for dynamic HTML templates.
-- **Database Integration**: Integrated with MySQL for data storage and retrieval.
 
-## Technology Stack
 
-- **Backend**: Spring Boot, Java 8, Spring MVC, Spring Data JPA (Hibernate)
-- **Frontend**: Thymeleaf, HTML, CSS, JavaScript
-- **Database**: MySQL
-- **IDE**: Eclipse, Spring Tool Suite (STS)
+Key Features
+Customer Management: Add, update, and remove customer profiles effortlessly.
 
-## Prerequisites
+Inventory Tracking: Monitor stock levels, manage pricing, and track inventory items.
 
-Before running this project, ensure you have the following installed:
+Order Processing: Handle order creation, updates, and real-time status tracking.
 
-- Java 8
-- MySQL
-- Maven
-- Eclipse or Spring Tool Suite (STS)
+Secure Authentication: Login system that safeguards user credentials.
+
+Role-Based Access Control: Customize permissions for admins and staff members.
+
+Dynamic UI: Responsive front-end powered by Thymeleaf templates.
+
+Database Integration: Reliable MySQL storage for all data.
+
+Technology Stack
+Backend: Spring Boot, Java 8, Spring MVC, Spring Data JPA (Hibernate)
+
+Frontend: Thymeleaf, HTML5, CSS3, JavaScript
+
+Database: MySQL
+
+Development Tools: Eclipse, Spring Tool Suite (STS)
+
+Build Tool: Maven
+
+
+
+Prerequisites
+Before running the application, please ensure the following software is installed:
+
+Java Development Kit (JDK) 8
+
+MySQL Server
+
+Maven build tool
+
+IDE such as Eclipse or Spring Tool Suite (STS)
 
 ## Setup and Installation
 # 🎁 Donate
@@ -67,11 +81,9 @@ Before running this project, ensure you have the following installed:
 
 Here is a preview of the FoodFrenzy interface:
 
-![Screenshot 2025-05-19 143351](https://github.com/user-attachments/assets/3e34f54c-c986-42ac-96a4-ed7ad18035a6)
-![Screenshot 2025-05-19 143427](https://github.com/user-attachments/assets/a4046d4e-8c3d-4629-8913-5543d709e80e)
-![Screenshot 2025-05-19 143441](https://github.com/user-attachments/assets/09c92348-ec06-4607-9ae4-88b28cc1e0ec)
-![Screenshot 2025-05-19 143452](https://github.com/user-attachments/assets/0e73aece-a28c-413d-9363-245358a0e439)
-![Screenshot 2025-05-19 143504](https://github.com/user-attachments/assets/ac26bd92-0fcd-473d-a175-9bc45fdb12ba)
+![48cd58175418045 64b37a1b02caf](https://github.com/user-attachments/assets/228fc69e-8bf7-4b82-98fd-2ffedcab6c40)
+
+
 
 
 ![image](https://github.com/user-attachments/assets/3d407958-efbe-449f-b4e1-5b08b9f8a28b)
